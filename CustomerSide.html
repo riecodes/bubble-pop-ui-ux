@@ -16,364 +16,14 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
     rel="stylesheet">
 
-  <style>
-    /* GENERAL */
-    * {
-      margin: 0;
-      padding: 0;
-    }
+    <!-- CSS -->
+    <link rel="stylesheet" href="CustomerSide/bubblebop-category.css">
+    <link rel="stylesheet" href="CustomerSide/CustomerSide.css">
+    <link rel="stylesheet" href="CustomerSide/footer.css">
+    <link rel="stylesheet" href="CustomerSide/header.css">
+    <link rel="stylesheet" href="CustomerSide/popular-milktea.css">
+    <link rel="stylesheet" href="CustomerSide/sidebar.css">
 
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    main {
-      display: flex;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 238px;
-      height: 100vh;
-      background-color: #f8f9fa;
-      padding: 20px;
-      position: relative;
-    }
-
-    .sidebar .logo {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .sidebar .nav-link {
-      display: flex;
-      align-items: center;
-      color: #737373;
-      padding: 10px 15px;
-      margin-bottom: 5px;
-      border-radius: 13px;
-      position: relative;
-      font-weight: 500;
-    }
-
-    .sidebar .nav-link.active {
-      background-color: #d2deef;
-      color: #205cad;
-    }
-
-    .sidebar .nav-link.active::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -20px;
-      /* This pushes the blue border to the left of the container */
-      width: 5px;
-      height: 100%;
-      background-color: #205cad;
-    }
-
-    .sidebar .nav-item-content {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-left: 17px;
-    }
-
-    .sidebar .nav-link img {
-      width: 20px;
-    }
-
-    .sidebar .divider {
-      height: 1px;
-      background-color: rgba(234, 106, 18, 0.1);
-      margin: 20px 0;
-      width: calc(100% + 40px);
-      /* Makes the divider span the full width of the container */
-      position: relative;
-      left: -20px;
-      /* Aligns the divider with the left edge of the container */
-    }
-
-    .upgrade-box {
-      background-color: #15488c;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      border-radius: 13px;
-
-    }
-
-    .upgrade-box p {
-      font-size: 12px;
-      margin-top: 50px;
-      font-weight: 300;
-    }
-
-    .upgrade-box .btn {
-      background-color: white;
-      color: #205cad;
-      border-radius: 10px;
-      font-weight: 600;
-      width: 115px;
-      font-size: 12px;
-    }
-
-    /* MAIN CONTENT */
-    .main-content {
-      flex: 1;
-      background-color: rgb(221, 221, 221);
-      padding: 20px;
-    }
-
-    /* HEADER */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .header .header-content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header .header-content .greeting {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .header .header-content .subtext {
-      font-size: 16px;
-      color: #205CAD;
-    }
-
-    .header .search-bar {
-      flex-grow: 1;
-      max-width: 400px;
-      margin: 0 20px;
-    }
-
-    .header .search-bar input {
-      width: 100%;
-      background: none;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 18px;
-    }
-
-    .header .user-info {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .header .user-info img {
-      width: 24px;
-    }
-
-    .header .user-info .user-name {
-      font-weight: 600;
-    }
-
-    .discount-banner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #205CAD;
-      color: white;
-      margin-top: 60px;
-      border-radius: 28px;
-      padding: 20px;
-      position: relative;
-    }
-
-    .discount-banner .text {
-      font-size: 64px;
-      font-weight: bold;
-      line-height: 1.5;
-    }
-
-    .discount-banner .coupon {
-      display: inline-block;
-      background-color: white;
-      color: #205CAD;
-      width: 268px;
-      height: 65px;
-      line-height: 65px;
-      /* Vertically centers the text */
-      text-align: center;
-      border-radius: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    .discount-banner .mascot {
-      height: 400px;
-      position: absolute;
-      right: -20px;
-      bottom: 0;
-    }
-
-    /* BUBBLEBOP CATEGORY */
-    .bubblebop-category {
-      margin-top: 50px;
-
-    }
-
-    .category-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .category-header h2 {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1D1D1B;
-    }
-
-    .view-more {
-      display: flex;
-      align-items: center;
-      font-size: 16px;
-      color: #205CAD;
-      text-decoration: none;
-    }
-
-    .view-more svg {
-      margin-left: 8px;
-    }
-
-    .categories {
-      display: flex;
-      gap: 90px;
-    }
-
-    .category-item {
-      width: 313.97px;
-      height: 313.97px;
-      background-color: #ACC7F0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      color: white;
-      padding: 10px;
-      /* Added padding for spacing */
-      box-sizing: border-box;
-    }
-
-    .category-item.milktea {
-      background-color: #205CAD;
-    }
-
-    .category-item .category-icon {
-      width: 150px;
-      height: 150px;
-      background-color: #D1D1D1;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    .category-item .category-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: #205CAD;
-    }
-
-    .category-item.milktea .category-text {
-      color: white;
-    }
-
-    /* Popular Milktea */
-    .popular-milktea {
-      margin-top: 50px;
-    }
-
-    .popular-milktea .category-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    /* FOOTER */
-    .footer {
-      background-color: #205cad;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .row .footer-below {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .footer .footer-header {
-      padding-bottom: 20px;
-      font-size: 17px;
-    }
-
-    .footer .footer-divider {
-      height: 1px;
-      background-color: #5885c2;
-      margin: 20px 0;
-    }
-
-    .footer .footer-column {
-      margin-bottom: 20px;
-    }
-
-    .footer .footer-column p {
-      font-weight: 300;
-    }
-
-    .footer .footer-column img {
-      margin-right: 10px;
-    }
-
-    .footer .footer-column .footer-header {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .footer .footer-bottom {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      flex-wrap: wrap;
-      font-weight: 300;
-    }
-
-    .footer .footer-bottom a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    .footer .footer-bottom .social-icon {
-      margin-left: 10px;
-    }
-  </style>
 </head>
 
 <body>
@@ -456,15 +106,11 @@
       </div>
 
       <div class="bubblebop-category">
-        <div class="category-header">
+        <div class="category-header d-flex justify-content-between">
           <h2>BubbleBop Category</h2>
-          <a href="#" class="view-more">View More
-            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M0.171875 13.0372C0.171875 5.87114 6.0019 0.0411148 13.1679 0.0411148C20.3339 0.0411148 26.164 5.87114 26.164 13.0372C26.164 20.2032 20.3339 26.0332 13.1679 26.0332C6.0019 26.0332 0.171875 20.2032 0.171875 13.0372ZM2.12128 13.0372C2.12128 19.1284 7.07667 24.0838 13.1679 24.0838C19.2592 24.0838 24.2146 19.1284 24.2146 13.0372C24.2146 6.94591 19.2592 1.99052 13.1679 1.99052C7.07667 1.99052 2.12128 6.94591 2.12128 13.0372ZM10.6024 7.83744C10.9819 7.45666 11.5992 7.45536 11.9812 7.83484L16.5117 12.3471C16.6593 12.4926 16.7545 12.6814 16.7867 12.8835L16.7989 13.0372C16.7989 13.2958 16.6962 13.5453 16.5117 13.7272L11.9812 18.2382C11.5992 18.619 10.9819 18.6164 10.6024 18.2356C10.2229 17.8535 10.2229 17.2362 10.605 16.8567L14.444 13.0372L10.605 9.21632C10.2229 8.83684 10.2229 8.21952 10.6024 7.83744Z"
-                fill="#205CAD" />
-            </svg>
-
+          <a href="#" class="view-more d-flex align-items-center gap-2">
+            <span>View More</span>
+            <img src="Combined-Shape-left.svg" alt="">
           </a>
         </div>
         <div class="categories">
@@ -486,24 +132,62 @@
           </div>
         </div>
       </div>
+
       <!-- New Popular Milktea section -->
+      
+      
       <div class="popular-milktea">
-        <div class="category-header">
+        <div class="category-header d-flex justify-content-between">
           <h2>Popular Milktea</h2>
-          <a href="#" class="view-more">View More
-            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M0.171875 13.0372C0.171875 5.87114 6.0019 0.0411148 13.1679 0.0411148C20.3339 0.0411148 26.164 5.87114 26.164 13.0372C26.164 20.2032 20.3339 26.0332 13.1679 26.0332C6.0019 26.0332 0.171875 20.2032 0.171875 13.0372ZM2.12128 13.0372C2.12128 19.1284 7.07667 24.0838 13.1679 24.0838C19.2592 24.0838 24.2146 19.1284 24.2146 13.0372C24.2146 6.94591 19.2592 1.99052 13.1679 1.99052C7.07667 1.99052 2.12128 6.94591 2.12128 13.0372ZM10.6024 7.83744C10.9819 7.45666 11.5992 7.45536 11.9812 7.83484L16.5117 12.3471C16.6593 12.4926 16.7545 12.6814 16.7867 12.8835L16.7989 13.0372C16.7989 13.2958 16.6962 13.5453 16.5117 13.7272L11.9812 18.2382C11.5992 18.619 10.9819 18.6164 10.6024 18.2356C10.2229 17.8535 10.2229 17.2362 10.605 16.8567L14.444 13.0372L10.605 9.21632C10.2229 8.83684 10.2229 8.21952 10.6024 7.83744Z"
-                fill="#205CAD" />
-            </svg>
+          <a href="#" class="view-more d-flex align-items-center gap-2">
+            <span>View More</span>
+            <img src="Combined-Shape-left.svg" alt="">
           </a>
         </div>
-
+        <div class="d-flex justify-content-between">
+          <div class="milktea-item position-relative">
+            <div class="milktea-rectangle d-flex flex-column justify-content-between">
+              <img src="discount-banner.svg" alt="Discount" class="discount-banners">
+              <div class="rating ">
+                <img src="star.svg" alt="Star">
+                <span>4.5</span>
+              </div>
+            </div>
+            <div class="milktea-info d-flex justify-content-between align-items-center">
+              <span>Boppy Jasmine Delight</span>
+              <div class="price-rectangle">$14.45</div>
+            </div>
+          </div>
+          <div class="milktea-item position-relative">
+            <div class="milktea-rectangle d-flex flex-column justify-content-between">
+              <img src="discount-banner.svg" alt="Discount" class="discount-banners">
+              <div class="rating d-flex align-items-center">
+                <img src="star.svg" alt="Star">
+                <span>4.5</span>
+              </div>
+            </div>
+            <div class="milktea-info d-flex justify-content-between align-items-center">
+              <span>Boppy Jasmine Delight</span>
+              <div class="price-rectangle">$14.45</div>
+            </div>
+          </div>
+          <div class="milktea-item position-relative">
+            <div class="milktea-rectangle d-flex flex-column justify-content-between">
+              <img src="discount-banner.svg" alt="Discount" class="discount-banners">
+              <div class="rating d-flex align-items-center">
+                <img src="star.svg" alt="Star">
+                <span>4.5</span>
+              </div>
+            </div>
+            <div class="milktea-info d-flex justify-content-between align-items-center">
+              <span>Boppy Jasmine Delight</span>
+              <div class="price-rectangle">$14.45</div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
-
-
   </main>
 
   <footer class="footer">
@@ -557,5 +241,4 @@
     integrity="sha384-pZwi7mz6tT9KY6f0ZFk4f5bgNyvYkQ09Ix7GBOFlmF+26a1+v7y0tgKqfL5C3u7G"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
